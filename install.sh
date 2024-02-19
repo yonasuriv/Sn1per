@@ -128,6 +128,10 @@ chmod 755 /tmp/msfinstall
 pip3 install dnspython colorama tldextract urllib3 ipaddress requests
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
 
+wget http://apt.metasploit.com/metasploit-framework.gpg.key
+gpg --no-default-keyring --keyring ./metasploit-framework_keyring.gpg --import metasploit-framework.gpg.key
+gpg --no-default-keyring --keyring ./metasploit-framework_keyring.gpg --export > ./metasploit-framework.gpg
+
 echo -e "$OKBLUE[*]$RESET Installing gem dependencies...$RESET"
 gem install rake 2> /dev/null > /dev/null
 gem install ruby-nmap 2> /dev/null > /dev/null
