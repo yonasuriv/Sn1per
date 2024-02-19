@@ -131,6 +131,7 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | b
 wget http://apt.metasploit.com/metasploit-framework.gpg.key
 gpg --no-default-keyring --keyring ./metasploit-framework_keyring.gpg --import metasploit-framework.gpg.key
 gpg --no-default-keyring --keyring ./metasploit-framework_keyring.gpg --export > ./metasploit-framework.gpg
+sudo mv ./metasploit-framework.gpg /etc/apt/trusted.gpg.d/
 rm metasploit-framework*
 
 echo -e "$OKBLUE[*]$RESET Installing gem dependencies...$RESET"
