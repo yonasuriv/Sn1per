@@ -593,7 +593,7 @@ function loot {
       echo -e "$OKBLUE[$RESET${OKRED}i${RESET}$OKBLUE]$RESET 🔝 The latest Professional version ( ${OKRED}10.4 ${RESET}) offers unparalleled features, including: $RESET"
       echo -e "$OKBLUE[$RESET${OKRED}i${RESET}$OKBLUE]$RESET  $RESET"
       echo -e "$OKBLUE[$RESET${OKRED}i${RESET}$OKBLUE]$RESET     💻 Sleek Web UI $RESET"
-      echo -e "$OKBLUE[$RESET${OKRED}i${RESET}$OKBLUE]$RESET     🛠️ Extensive add-ons $RESET"
+      echo -e "$OKBLUE[$RESET${OKRED}i${RESET}$OKBLUE]$RESET     🛠️  Extensive add-ons $RESET"
       echo -e "$OKBLUE[$RESET${OKRED}i${RESET}$OKBLUE]$RESET     🔄 Seamless integrations $RESET"
       echo -e "$OKBLUE[$RESET${OKRED}i${RESET}$OKBLUE]$RESET  $RESET"
       echo -e "$OKBLUE[$RESET${OKRED}i${RESET}$OKBLUE]$RESET 🤝 Experience priority support, continuous updates, and enhanced capabilities tailored for professionals like you. $RESET"
