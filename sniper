@@ -164,7 +164,7 @@ function sniper_status {
 # CHECK FOR UPDATES
 function check_update {
   if [[ "$ENABLE_AUTO_UPDATES" == "1" ]] && [[ "$ONLINE" == "1" ]]; then
-    LATEST_VER=$(curl --connect-timeout 5 -s https://api.github.com/repos/1N3/Sn1per/tags | grep -Po '"name":.*?[^\\]",'| head -1 | cut -c11-13)
+    LATEST_VER=$(curl --connect-timeout 5 -s https://api.github.com/repos/yonasuriv/Sn1per/tags | grep -Po '"name":.*?[^\\]",'| head -1 | cut -c11-13)
     if [[ "$LATEST_VER" != "$VER" ]]; then
       echo -e "$OKBLUE[$RESET${OKRED}i${RESET}$OKBLUE] sniper v$LATEST_VER is available to download... To update, type$OKRED \"sniper -u\" $RESET"
     fi
@@ -177,15 +177,15 @@ function update {
   logo
   echo -e "$OKBLUE[*]$RESET Checking for updates...$OKBLUE[$RESET${OKGREEN}OK${RESET}$OKBLUE]$RESET"
   if [[ "$ONLINE" == "0" ]]; then
-    echo "You will need to download the latest release manually at https://github.com/1N3/Sn1per/"
+    echo "You will need to download the latest release manually at https://github.com/yonasuriv/Sn1per/"
   else
-    LATEST_VER=$(curl --connect-timeout 5 -s https://api.github.com/repos/1N3/Sn1per/tags | grep -Po '"name":.*?[^\\]",'| head -1 | cut -c11-13)
+    LATEST_VER=$(curl --connect-timeout 5 -s https://api.github.com/repos/yonasuriv/Sn1per/tags | grep -Po '"name":.*?[^\\]",'| head -1 | cut -c11-13)
     if [[ "$LATEST_VER" != "$VER" ]]; then
       echo -e "$OKBLUE[$RESET${OKRED}i${RESET}$OKBLUE] Sn1per $LATEST_VER is available to download...Do you want to update? (y or n)$RESET"
       read ans
       if [[ "$ans" = "y" ]]; then
         rm -Rf /tmp/Sn1per/ 2>/dev/null
-        git clone https://github.com/1N3/Sn1per /tmp/Sn1per/
+        git clone https://github.com/yonasuriv/Sn1per /tmp/Sn1per/
         cd /tmp/Sn1per/
         chmod +rx install.sh
         bash install.sh
@@ -205,7 +205,7 @@ fi
 function check_online {
   ONLINE=$(curl --connect-timeout 3 --insecure -s "https://sn1persecurity.com/community/updates.txt?$VER&mid=$(cat /etc/machine-id)" 2> /dev/null)
   if [[ -z "$ONLINE" ]]; then
-    ONLINE=$(curl --connect-timeout 3 -s https://api.github.com/repos/1N3/Sn1per/tags | grep -Po '"name":.*?[^\\]",'| head -1 | cut -c11-13)
+    ONLINE=$(curl --connect-timeout 3 -s https://api.github.com/repos/yonasuriv/Sn1per/tags | grep -Po '"name":.*?[^\\]",'| head -1 | cut -c11-13)
     if [[ -z "$ONLINE" ]]; then
       ONLINE="0"
       echo -e "$OKBLUE[*]$RESET Checking for active internet connection $OKBLUE[$RESET${OKRED}FAIL${RESET}$OKBLUE]"
