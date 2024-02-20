@@ -164,10 +164,12 @@ function sniper_status {
 # CHECK FOR UPDATES
 function check_update {
   if [[ "$ENABLE_AUTO_UPDATES" == "1" ]] && [[ "$ONLINE" == "1" ]]; then
-    LATEST_VER=$(curl --connect-timeout 5 -s https://api.github.com/repos/yonasuriv/Sn1per/tags | grep -Po '"name":.*?[^\\]",'| head -1 | cut -c11-13)
+    LATEST_VER=$(curl --connect-timeout 5 -s https://api.github.com/repos/yonasuriv/Sn1per/tags | grep -Po '"name":.*?[^\\]",'| head -1 | cut -c10-12)
     if [[ "$LATEST_VER" != "$VER" ]]; then
-      echo -e "$OKBLUE[$RESET${OKRED}i${RESET}$OKBLUE] sniper v$LATEST_VER is available to download... To update, type$OKRED \"sniper -u\" $RESET"
+      echo -e "$OKBLUE[$RESET${OKRED}i${RESET}$OKBLUE] Sniper $LATEST_VER is available to download... To update, type$OKRED \"sniper -u\" $RESET"
     fi
+    else [[ "$VER" == "$VER" ]]; then
+      echo -e "$OKBLUE[$RESET${OKGREEN}i${RESET}$OKBLUE] Sniper is updated in its latest version $VER. $RESET"
   fi
   touch /tmp/update-check.txt 2> /dev/null
 }
