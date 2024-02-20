@@ -3,7 +3,8 @@
 # Created by @xer0dayz - https://sn1persecurity.com
 
 if [[ $EUID -ne 0 ]]; then
-   echo "This script must be run as root" 
+   echo
+   echo "$OKRED[E]:$RESET This script must be run as root"
    exit 1
 fi
 
