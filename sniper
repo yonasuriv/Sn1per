@@ -169,7 +169,7 @@ function check_update {
     if [[ "$LATEST_VER" != "$VER" ]]; then
       echo -e "$OKBLUE[$RESET${OKRED}i${RESET}$OKBLUE] Sniper $LATEST_VER is available to download... To update, type$OKRED \"sniper -u\" $RESET"
     fi
-    else [[ "$VER" == "$VER" ]]; then
+    else #[[ "$VER" == "$VER" ]]; then
       echo -e "$OKBLUE[$RESET${OKGREEN}i${RESET}$OKBLUE] Sniper is updated in its latest version $VER. $RESET"
   fi
   touch /tmp/update-check.txt 2> /dev/null
